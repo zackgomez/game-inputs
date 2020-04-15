@@ -43,6 +43,7 @@ function Inputs(element, opts) {
 
     // state object to be queried
     this.state = {
+      x: 0, y: 0,
         dx: 0, dy: 0,
         scrollx: 0, scrolly: 0, scrollz: 0
     }
@@ -171,6 +172,9 @@ function onMouseMove(inputs, ev) {
     }
     inputs.state.dx += dx
     inputs.state.dy += dy
+
+    inputs.state.x = ev.offsetX;
+    inputs.state.y = ev.offsetY;
 }
 
 // experimental - for touch events, extract useful dx/dy
